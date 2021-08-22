@@ -7,13 +7,13 @@
 ********************************************************************************
 * Circuit Description:
 *
-* MAX5134	  ---> stm32f103c8t6
+* MAX5134	        ---> stm32f103c8t6
 * ========================================
 *  (VCC) 		--> 	3.3V	
 *  (GND) 		--> 	GND
 *  (CS) 		--> 	PA.4  (CS Pin - chip select, enable data transfer)
 *  (DIN) 		--> 	PA.7  (MOSI pin)
-*  (SCLK) 	--> 	PA.5  (SCK pin)
+*  (SCLK) 	        --> 	PA.5  (SCK pin)
 */
 
 
@@ -36,7 +36,7 @@ void max5134(void)
 	  uint8_t data1 = 255;       // Data bits
 	  uint8_t data2 = 255;       // Data bits
     
-    resetCS;    //Set CS to LOW to activate IC
+          resetCS;    //Set CS to LOW to activate IC
 	  HAL_SPI_Transmit(&hspi1, (uint8_t*)&cmd, 1, 1); 
 	  HAL_SPI_Transmit(&hspi1, (uint8_t*)&data1, 1, 1); 
 	  HAL_SPI_Transmit(&hspi1, (uint8_t*)&data2, 1, 1); 
